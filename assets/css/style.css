@@ -1,0 +1,30 @@
+
+html,body{
+    background-image: url('../../assets/images/wood.png');
+    font-family: 'Shadows Into Light', cursive;
+       text-align: center;
+
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 1px dotted #004b4b;
+    background-color: #fafafa;
+    color: #004b4b;
+    padding: 25px;
+    font-family: 'Shadows Into Light', cursive;
+    visibility: hidden;
+    font-size: 50px;
+}
+
+.initialtitle{
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size: 60px;
+    color: #004b4b;    
+}
