@@ -27,21 +27,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Acme|Poppins|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Poppins|Shadows+Into+Light|Muli" rel="stylesheet">
 </head>
 
 <body>
-    <div class="row">
-        <div class="container">
+    <div class="row main">
+        <div class="container" id="container_question">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h1>Totally Trivia Game</h1>
-                    <h3>Time remaining:
-                        <h3 id="time">hh</h3>
+                    <h1 class="title_h1">Totally Trivia Game</h1>
+                    <h3 class="lable_h3">Time remaining:
+                        <h3 id="time" class="lable_h3">13</h3>
                     </h3>
                     <div id="question">
-                        <h2 id="questionlabel"></h2>
-                        <div class="custom-control custom-radio">
+                        <h1 id="questionlabel" class="question_h1"></h1>
+
+                        <div class="custom-control custom-radio ">
                             <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                             <label id="labelAsnwer1" class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
                         </div>
@@ -57,10 +58,15 @@
                 </div>
             </div>
         </div>
+        <div class="container" id="container_start">
+            <h1 class="title_h1">Trivia Game</h1>
+            <button id="start" type="button" class="btn btn-primary btn-lg btn-block">Start</button>
+        </div>
     </div>
 
     <div id="popup" class="popup">
         <h1 id="answerSelected" class="initialtitle">Good Answer!</h1>
+        <br/>
         <h1 id="initialtitle" class="initialtitle">Country Hangman!</h1>
     </div>
 </body>
