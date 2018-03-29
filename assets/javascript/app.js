@@ -3,13 +3,16 @@ $(document).ready(function () {
     var questionList = [];
 
     var setTimeOutAnswer;
-    var interval = 2000;
+    var interval = 3000;
 
     var time;
     var intervalTime = 1000;
     var countTime = 13;
 
     var countQuestion = 0;
+
+    var countWin = 0;
+    var countLoose = 0;
 
     //Data game
     function initializeData() {
@@ -18,7 +21,7 @@ $(document).ready(function () {
                 text: "The most populous city in the world is",
                 answer: "Tokyo",
                 options: ["Rusia", "Oslo", "Tokyo"],
-            }/*,
+            },
             {
                 text: "The language spoken by the people by Pakistan is",
                 answer: "Sindhi",
@@ -33,7 +36,32 @@ $(document).ready(function () {
                 text: "Mount Everest is located in",
                 answer: "Nepal",
                 options: ["Nepal", "Bhutan", "New Delhi"],
-            }*/];
+            },
+            {
+                text: "What is the capital city of Spain?",
+                answer: "Madrid",
+                options: ["Barcelona", "Madrid", "Bilbao"],
+            },
+            {
+                text: "In 2011, which country hosted a Formula 1 race for the first time?",
+                answer: "India",
+                options: ["India", "Paris", "Rome"],
+            },
+            {
+                text: "How many valves does a trumpet have?",
+                answer: "Three",
+                options: ["Two", "Three", "Four"],
+            },
+            {
+                text: "When did Margaret Thatcher become Prime Minister?",
+                answer: "1979",
+                options: ["1980", "1976", "1979"],
+            },
+            {
+                text: "Who invented TV?",
+                answer: "George Carey",
+                options: ["Thomas Alva Edison", "George Carey", "Nicola Tesla"],
+            }];
     }
 
     function timeQuestion() {
@@ -42,6 +70,7 @@ $(document).ready(function () {
             $("#time").text(countTime);
 
             if (countTime == 1) {
+                countLoose++;
                 visibleAnswer(false, true);
             }
         }
@@ -59,6 +88,11 @@ $(document).ready(function () {
             setTimeOutAnswer = null;
             $("#container_start").css("visibility", "visible");
             $("#container_question").css("visibility", "hidden");
+            $("#start").text("Restart");
+
+            $("#correctAnswer").text("Correct Answer: " + countWin);
+            $("#incorrectAnswer").text("Incorrect Answer: " + countLoose);
+            $("#result").css("visibility", "visible");
 
         } else {
             var question = questionList[countQuestion].text;
@@ -89,11 +123,11 @@ $(document).ready(function () {
         var rightAnswer = questionList[countQuestion].answer;
 
         if (userSelected === questionList[countQuestion].answer) {
-            console.log("Good Answer");
+            countWin++;
             visibleAnswer(true, false);
         }
         else {
-            console.log("wrong answer");
+            countLoose++;
             visibleAnswer(false, false);
         }
     });
@@ -101,8 +135,11 @@ $(document).ready(function () {
     $("body").on('click', "#start", function (e) {
         console.log("Question");
         countQuestion = 0;
+        countWin = 0;
+        countLoose = 0;
         $("#container_question").css("visibility", "visible");
         $("#container_start").css("visibility", "hidden");
+        $("#result").css("visibility", "hidden");
 
         initializeData();
         drawQuestion();
