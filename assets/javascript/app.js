@@ -31,7 +31,7 @@ $(document).ready(function () {
                 text: "Country that has the highest in Barley Production",
                 answer: "Russia",
                 options: ["USA", "China", "Russia"],
-            }/*,
+            },
             {
                 text: "Mount Everest is located in",
                 answer: "Nepal",
@@ -61,12 +61,11 @@ $(document).ready(function () {
                 text: "Who invented TV?",
                 answer: "George Carey",
                 options: ["Thomas Alva Edison", "George Carey", "Nicola Tesla"],
-            }*/];
+            }];
     }
 
     function timeQuestion() {
-        if (countQuestion != questionList.length) {
-            console.log("if");
+        if (countQuestion != questionList.length) {            
             countTime--;
             $("#time").text(countTime);
 
@@ -76,7 +75,6 @@ $(document).ready(function () {
             }
         }
         else{
-            console.log("else");
             clearInterval(time);
         }
     }
@@ -84,7 +82,6 @@ $(document).ready(function () {
 
     function drawQuestion() {
         if (countQuestion == questionList.length) {
-            console.log("clear drawQuestion");
             clearTimeout(time);
             clearTimeout(setTimeOutAnswer);
             time = null;
@@ -168,7 +165,6 @@ $(document).ready(function () {
 
     function nextAnswer() {
 
-        console.log("clear nextAnswer");
         clearTimeout(setTimeOutAnswer);
         setTimeOutAnswer = null;
 
@@ -190,7 +186,6 @@ $(document).ready(function () {
     function visibleAnswer(isAnswer, isTimeOut) {
         $("#popup").css("visibility", "visible");
 
-        console.log("clear visibleAnswer");
         clearTimeout(time);
         time = null;
 
