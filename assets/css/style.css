@@ -3,7 +3,7 @@ html,body{
     background-image: url('../../assets/images/wood.png');
     font-family: 'Shadows Into Light', cursive;
        text-align: center;       
-    overflow: scroll;
+    overflow: auto;
 
 }
 
@@ -40,7 +40,7 @@ html,body{
 }
 
 .main {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     /*-webkit-transform: translate(-50%, -50%);*/
@@ -52,6 +52,7 @@ html,body{
     font-family: 'Shadows Into Light', cursive;
     visibility: visible;
     font-size: 30px;
+    overflow-y: auto;
 }
 
 .initialtitle{

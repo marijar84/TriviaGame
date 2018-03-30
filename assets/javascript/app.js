@@ -221,6 +221,8 @@ $(document).ready(function () {
         clearTimeout(time);
         time = null;
 
+        $("#time").text = 13;   
+
         //When the time finished
         if (isTimeOut) {
             $("#answerSelected").text("Ooooppsss sorry!");
